@@ -1,0 +1,65 @@
+{
+    "animals": [
+        { "id": 1, "name": "Chaka", "breed": "Collie"},
+        { "id": 2, "name": "Cufford", "breed": "Golden Retriever"},
+        { "id": 3, "name": "Vern", "breed": "Blue Heeler" }
+    ],
+    "customers": [
+        {
+            "id": 1,
+            "name": "Greg Tippins",
+            "address": "8008 Rad Ave."
+        },
+        
+        {
+            "id": 2,
+            "name": "Morgan Dachshund",
+            "address": "802 Bermuda Dr."
+        },
+        
+        {
+            "id": 3,
+            "name": "Fred Savage",
+            "address": "3322 Savage Ave."
+        },
+        
+        {
+            "id": 4,
+            "name": "Luke Peeler",
+            "address": "244 Peeler Pl."
+        }
+    ],
+    "employees": [
+        {
+            "id": 1,
+            "name": "Shayna Robertson",
+            "kennel": "Nashville North"
+        },
+        
+        {
+            "id": 2,
+            "name": "Rodney Kisner",
+            "kennel": "Nashville North"
+        },
+        
+        {
+            "id": 3,
+            "name": "Bert Finley",
+            "kennel": "Nashville South"
+        }
+    ],
+        
+    "locations": [
+        {
+            "id": 1,
+            "name": "Nashville North",
+            "address": "8422 Johnson Pike"
+        },
+        
+        {
+            "id": 2,
+            "name": "Nashville South",
+            "address": "209 Emory Drive"
+        }
+    ]
+}
