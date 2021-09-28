@@ -5,18 +5,19 @@ import { AnimalCard } from "./animal/AnimalCard"
 import { CustomerCard } from "./customer/Customer"
 import { EmployeeCard } from "./employee/Employee"
 import { LocationCard } from "./location/Location"
+import { AnimalList } from "./animal/AnimalList"
 
-export const ApplicationViews = () => {
+export const ApplicationViews = ( {isAdmin, myUser}) => {
     return (
         <>
             {/* Render the location list when http://localhost:3000/ */}
             <Route exact path="/">
-                <Home />
+                <Home isAdmin={isAdmin} myUser={myUser}/>
             </Route>
 
             {/* Render the animal list when http://localhost:3000/animals */}
-            <Route path="/animals">
-              <AnimalCard />
+            <Route exact path="/animals">
+              <AnimalList />
             </Route>
              
              {/* Render the animal list when http://localhost:3000/animals */}
