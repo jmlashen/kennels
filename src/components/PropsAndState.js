@@ -2,7 +2,7 @@
     import "./PropsAndState.css"
     
 
-export const PropsAndState = ({ yourName, day }) => {
+export const PropsAndState = ({ myUser }) => {
     let [countClicks, setCountClicks] = useState(0)
     //setCountClicks is a taco based on the varible
     let [saveNow, setSaveNow] =useState(false)
@@ -24,8 +24,8 @@ export const PropsAndState = ({ yourName, day }) => {
 
   return (
     <>
-      <h3>Welcome, {yourName} </h3>
-      <p>Today is {day}</p>
+      <h3>Welcome, {myUser.name} and {myUser.pet} </h3>
+      <p>Today is beautiful</p>
       <p>{countClicks}</p>
       <button onClick={(handleClick)}>Click Me</button>
 
