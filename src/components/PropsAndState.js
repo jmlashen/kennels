@@ -1,11 +1,14 @@
     import React, {useState} from "react"
     import "./PropsAndState.css"
+    import { newDate } from "./Date"
+    import { QuoteCard } from "./quotes/QuoteCard"
     
 
 export const PropsAndState = ({ myUser }) => {
     let [countClicks, setCountClicks] = useState(0)
     //setCountClicks is a taco based on the varible
     let [saveNow, setSaveNow] =useState(false)
+    
 
     const handleClick = () => {
             //good practice:
@@ -19,13 +22,20 @@ export const PropsAndState = ({ myUser }) => {
       newSaveNow = true;
       setSaveNow(newSaveNow);
 
-
   }
+
+  const current = new Date(Date.now());
+  const date = current.toDateString();
+  
+
+
 
   return (
     <>
       <h3>Welcome, {myUser.name} and {myUser.pet} </h3>
+         <QuoteCard />
       <p>Today is beautiful</p>
+      <p>today's date {newDate}</p>
       <p>{countClicks}</p>
       <button onClick={(handleClick)}>Click Me</button>
 

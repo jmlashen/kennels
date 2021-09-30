@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { getAllAnimals } from '../../modules/AnimalManager';
-import { AnimalCard } from './AnimalCard';
+import { CustomerCard } from "./Customer";
+import { useEffect, useState} from "react";
+import { GetAllCustomers } from "../../modules/CustomerManager";
 
-export const AnimalList = () => {
+
+export const CustomerList = () => {
     //this is invoked
-    const [animals, setAnimals] = useState([]);
-  const GetAnimals = () => { //this function gets all the animals from the animal manager. this allows to call getAnimals anytime so we dont have to use useEffect everytime
+    const [customer, setCustomer] = useState([]);
+  const GetCustomers = () => { //this function gets all the animals from the animal manager. this allows to call getAnimals anytime so we dont have to use useEffect everytime
     
     //      varible, function
-    return getAllAnimals().then(animalsFromAPI => {
+    return GetAllCustomers().then(customersFromAPI => {
       // We'll do something more interesting with this data soon.
-      console.log(animalsFromAPI);
-      setAnimals(animalsFromAPI)
+      console.log(customersFromAPI);
+      setCustomer(customersFromAPI)
       //         from api
       // no need to copy state here cause we're wiping out our array 
     });
@@ -20,14 +21,14 @@ export const AnimalList = () => {
   useEffect(() => { //this is number 4 
       //happens after the return/fetch data from the database and changes the state. on load of this component what do I need to happen. If I need to get data, it will only get that data on this first load. it wont continulously get data. 
 
-    GetAnimals(); //this changes the state and then re-renders
+    GetCustomers(); //this changes the state and then re-renders
   }, []); //empty array only runs after the first render
 
     // Finally we use .map() to "loop over" the animals array to show a list of animal cards
   // Finally we use .map() to "loop over" the animals array to show a list of animal cards
   return (
     <div className="container-cards">
-      {animals.map(animal => <AnimalCard key={animal.id} animal={animal}/>)}
+      {customer.map(customer => <CustomerCard key={customer.id} customer={customer}/>)}
     </div>
   );
 };
