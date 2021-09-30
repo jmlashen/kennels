@@ -19,6 +19,13 @@ export const Kennel = () => (
     </>
 )
 
+
+
+
+
+
+
+
 //Now update your index.js by adding a root component of <Router /> which gets imported from the React Router package. Within <Router>, place the <Kennel /> child component. This tells React "I will be placing Routes in my Kennel component."
 
 

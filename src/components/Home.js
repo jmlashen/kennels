@@ -1,10 +1,12 @@
 import React from "react";
 import { PropsAndState } from './PropsAndState'
 
-export const Home = ({isAdmin, myUser }) => (
+
+export const Home = ({isAdmin, myUser, }) => (
     <>
         { isAdmin ?
       <p>You are an admin</p>
+     
       :
       <p>You are not an admin</p>
       }
