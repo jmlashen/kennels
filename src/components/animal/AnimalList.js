@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getAllAnimals } from '../../modules/AnimalManager';
 import { AnimalCard } from './AnimalCard';
+import { deleteAnimal } from '../../modules/AnimalManager';
 
 export const AnimalList = () => {
     //this is invoked
@@ -17,6 +18,12 @@ export const AnimalList = () => {
     });
   };
 
+  const handleDeleteAnimal = id => {
+    deleteAnimal(id)
+    .then(() => getAllAnimals().then(setAnimals));
+};
+
+
   useEffect(() => { //this is number 4 
       //happens after the return/fetch data from the database and changes the state. on load of this component what do I need to happen. If I need to get data, it will only get that data on this first load. it wont continulously get data. 
 
@@ -25,12 +32,28 @@ export const AnimalList = () => {
 
     // Finally we use .map() to "loop over" the animals array to show a list of animal cards
   // Finally we use .map() to "loop over" the animals array to show a list of animal cards
+//   return (
+//     <div className="container-cards">
+//       {animals.map(animal => <AnimalCard key={animal.id} animal={animal} handleDeleteAnimal={handleDeleteAnimal}/>)}
+//     </div>
+//   );
+// };
+
+// export const AnimalList = () => {
+
+  // ...code omitted for brevity...
+
   return (
     <div className="container-cards">
-      {animals.map(animal => <AnimalCard key={animal.id} animal={animal}/>)}
+      {animals.map(animal =>
+        <AnimalCard
+          key={animal.id}
+          animal={animal}
+          handleDeleteAnimal={handleDeleteAnimal} />)}
     </div>
   );
 };
+
 //once this is returned now we run useEffect
 
 //this is where render the actual cards

@@ -12,3 +12,8 @@ export const GetAllCustomers = () => {
 }
 
 //this is where we all our database calls and return the result
+export const deleteCustomer = (id) => {
+  return fetch(`${remoteURL}/customers/${id}`, {
+    method: "DELETE"
+  }).then(result => result.json())
+}

@@ -2,6 +2,7 @@ import React from "react"
 import { NavBar } from "./nav/NavBar"
 import { ApplicationViews } from "./ApplicationViews"
 import "./Kennel.css"
+import { QuoteCard } from "./quotes/QuoteCard"
 
 const isAdmin = true;
 
@@ -15,6 +16,7 @@ const myUser = {
 export const Kennel = () => (
     <>
         <NavBar />
+        {/* <QuoteCard /> */}
         <ApplicationViews isAdmin={isAdmin} myUser={myUser}/>
     </>
 )

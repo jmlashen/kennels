@@ -1,6 +1,7 @@
 import { CustomerCard } from "./Customer";
 import { useEffect, useState} from "react";
 import { GetAllCustomers } from "../../modules/CustomerManager";
+import { deleteCustomer } from "../../modules/CustomerManager";
 
 
 export const CustomerList = () => {
@@ -17,6 +18,11 @@ export const CustomerList = () => {
       // no need to copy state here cause we're wiping out our array 
     });
   };
+  const handleDeleteCustomer = id => {
+  deleteCustomer(id)
+  .then(() => GetAllCustomers().then(setCustomer));
+};
+
 
   useEffect(() => { //this is number 4 
       //happens after the return/fetch data from the database and changes the state. on load of this component what do I need to happen. If I need to get data, it will only get that data on this first load. it wont continulously get data. 
@@ -28,10 +34,14 @@ export const CustomerList = () => {
   // Finally we use .map() to "loop over" the animals array to show a list of animal cards
   return (
     <div className="container-cards">
-      {customer.map(customer => <CustomerCard key={customer.id} customer={customer}/>)}
+      {customer.map(customer =>
+        <CustomerCard
+          key={customer.id}
+          customer={customer}
+          handleDeleteCustomer={handleDeleteCustomer} />)}
     </div>
   );
-};
+      }
 //once this is returned now we run useEffect
 
-//this is where render the actual cards
+//th

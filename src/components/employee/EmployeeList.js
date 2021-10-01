@@ -1,6 +1,7 @@
 import { EmployeeCard } from "./Employee";
 import { useEffect, useState } from "react";
-import { GetAllEmployees } from "../../modules/EmployeeManager";
+import { deleteEmployee, GetAllEmployees } from "../../modules/EmployeeManager";
+
 
 
 export const EmployeeList = () => {
@@ -15,6 +16,12 @@ export const EmployeeList = () => {
         });
     };
 
+    const handleDeleteEmployee = id => {
+        deleteEmployee(id)
+        .then(() => GetAllEmployees().then(setEmployee));
+      };
+      
+
     useEffect(() => {
         GetEmployees();
     }, []);
@@ -22,7 +29,11 @@ export const EmployeeList = () => {
 
     return (
         <div className="container-cards">
-            {employee.map(employee => <EmployeeCard key={employee.id} employee={employee} />)}
+          {employee.map(employee =>
+            <EmployeeCard
+              key={employee.id}
+              employee={employee}
+              handleDeleteEmployee={handleDeleteEmployee} />)}
         </div>
-    );
-};
+      );
+          }

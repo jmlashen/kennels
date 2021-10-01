@@ -12,3 +12,8 @@ export const getAllAnimals = () => {
 }
 
 //this is where we all our database calls and return the result
+export const deleteAnimal = (id) => {
+  return fetch(`${remoteURL}/animals/${id}`, {
+    method: "DELETE"
+  }).then(result => result.json())
+}
