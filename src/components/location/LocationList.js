@@ -1,6 +1,6 @@
 import { LocationCard } from "./Location";
 import { useEffect, useState } from "react";
-import { GetAllLocations } from "../../modules/LocationManager";
+import { GetAllLocations, deleteLocation } from "../../modules/LocationManager";
 
 
 export const LocationList = () => {
@@ -15,6 +15,11 @@ export const LocationList = () => {
         });
     };
 
+    const handleDeleteLocation = id => {
+        deleteLocation(id)
+        .then(() => GetAllLocations().then(setLocation));
+      };
+
     useEffect(() => {
         GetLocations();
     }, []);
@@ -22,7 +27,11 @@ export const LocationList = () => {
 
     return (
         <div className="container-cards">
-            {location.map(location => <LocationCard key={location.id} location={location} />)}
+          {location.map(location =>
+            <LocationCard
+              key={location.id}
+              location={location}
+              handleDeleteLocation={handleDeleteLocation} />)}
         </div>
-    );
-};
+      );
+          }

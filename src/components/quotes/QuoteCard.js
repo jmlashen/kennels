@@ -3,10 +3,10 @@ import { getAllQuotes } from "../../modules/QuoteManager"
 
 export const QuoteCard = () => {
     
-    const [quotes, setQuotes] = useState([])
+    const [quotes, setQuotes] = useState([]) //intial state is empty
     const [quote, setQuote] = useState({}) // {} placeholder value for the template properites below in the JSX template
     //added a second state because quotes job is to store the list of quote. quote value stores the selected quote
-    
+    //STATE IS THE ARRAY OF QUOTES
     const getQuotes = () => {
         return getAllQuotes().then(res => {
             setQuotes(res)
@@ -16,16 +16,23 @@ export const QuoteCard = () => {
     const pickQuote = () => {
         const random = Math.floor(Math.random() *quotes.length);
         setQuote(quotes[random] || {})
+        //if this one doesnt ^ work 
     }
+
+    //
 
     useEffect(() => {
         getQuotes();
     }, []);
+    //BOTH USE EFFECTS RUN AT THE SAME TIME
+    //this one is getting data 
 
     useEffect(() => {
         pickQuote();
     }, [quotes]);
+    //dependacny^^array
     //whenever quotes changes, run the effect
+    //once we get quotes the useEffect pickQuote again
 
     return (
         <section className="quote">
