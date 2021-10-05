@@ -15,12 +15,14 @@
     {
       "id": 3,
       "name": "Fred Savage",
-      "address": "3322 Savage Ave."
+      "address": "3322 Savage Ave.",
+      "email":"fredsav@gmail.com"
     },
     {
       "id": 4,
       "name": "Luke Peeler",
-      "address": "244 Peeler Pl."
+      "address": "244 Peeler Pl.",
+      "email":"lukeybaby@gmail.com"
     }
   ],
   "employees": [
