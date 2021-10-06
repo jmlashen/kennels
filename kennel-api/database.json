@@ -3,12 +3,33 @@
     {
       "id": 1,
       "name": "Chaka",
-      "breed": "Collie"
+      "breed": "Collie",
+      "locationId": 2,
+      "customerId": 4 
     },
     {
       "id": 2,
       "name": "Cufford",
-      "breed": "Golden Retriever"
+      "breed": "Golden Retriever",
+      "locationId": 1,
+      "customerId": 3 
+      
+    },
+    {
+      "id": 2,
+      "name": "Suzy",
+      "breed": "Border Collie",
+      "locationId": 1,
+      "customerId": 3 
+      
+    },
+    {
+      "id": 2,
+      "name": "Freddy",
+      "breed": "Boxer",
+      "locationId": 1,
+      "customerId": 3 
+      
     }
   ],
   "customers": [
